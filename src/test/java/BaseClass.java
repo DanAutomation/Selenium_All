@@ -30,6 +30,7 @@ public class BaseClass {
         wait = new WebDriverWait(driver, 10);
 
 
+
     }
 
     @AfterClass

@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class LessonFourPart2 extends BaseClass{
         List<WebElement> allElements = driver.findElements(By.cssSelector(".box li"));
         int s=allElements.size();
         for(int i=1;i<=s;i++){
-            if(!driver.findElements(By.cssSelector("[class~=sticker]")).isEmpty())
-                System.out.println(true);
+            if(driver.findElements(By.cssSelector("[class~=sticker]")).size()==1)
+                Assert.assertTrue(true);
         }
     }
 
