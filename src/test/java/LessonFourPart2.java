@@ -15,7 +15,8 @@ public class LessonFourPart2 extends BaseClass{
         List<WebElement> allElements = driver.findElements(By.cssSelector(".box li"));
         int s=allElements.size();
         for(int i=1;i<=s;i++){
-            driver.findElements(By.cssSelector("[class~=sticker]"));
+            if(!driver.findElements(By.cssSelector("[class~=sticker]")).isEmpty())
+                System.out.println(true);
         }
     }
 
