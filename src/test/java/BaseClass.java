@@ -35,7 +35,7 @@ public class BaseClass {
 
     @AfterClass
     public void end(){
-        driver.quit();
-        driver = null;
+//        driver.quit();
+//        driver = null;
     }
     }

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 /**
  * Created by QAEngineer on 07.06.2017.
  */
-public class LessonFive extends BaseClass{
+public class TestLessonFive extends BaseClass{
 
 
     @Test
@@ -13,9 +13,9 @@ public class LessonFive extends BaseClass{
         System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("color"));
         System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("background-color"));
         System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("border-color"));
-
-
     }
+
+
 }
 
 /*
