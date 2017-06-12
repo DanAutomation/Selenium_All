@@ -7,12 +7,26 @@ import org.testng.annotations.Test;
 public class TestLessonFive extends BaseClass{
 
 
+//    @Test
+//    public void checkcSS(){
+//        driver.get("http://selenium2.ru");  // page-header
+//        System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("color"));
+//        System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("background-color"));
+//        System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("border-color"));
+//    }
+
     @Test
-    public void checkcSS(){
-        driver.get("http://selenium2.ru");  // page-header
-        System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("color"));
-        System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("background-color"));
-        System.out.println(driver.findElement(By.cssSelector(".page-header h2")).getCssValue("border-color"));
+    public void testFirst(){
+        login();
+        driver.get("http://localhost/litecart/admin/");
+        System.out.println(driver.findElement(By.cssSelector("..list-vertical li")).getText().contains("Geo Zones"));
+    }
+
+    public void login() {
+        driver.get("http://localhost/litecart/admin/?app=countries&doc=countries");
+        driver.findElement(By.name("username")).sendKeys("admin");
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.name("login")).click();
     }
 
 
