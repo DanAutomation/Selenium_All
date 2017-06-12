@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by QAEngineer on 09.06.2017.
  */
-public class LessonFiveFirstB extends BaseClass{
+public class LessonFivePartTwo extends BaseClass{
 
 
 
