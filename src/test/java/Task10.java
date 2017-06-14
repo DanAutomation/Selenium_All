@@ -16,11 +16,9 @@ public class Task10 extends BaseClass{
         WebElement product = driver.findElement(By.cssSelector("#box-campaigns li:first-child"));
         WebElement mainPrice = driver.findElement(By.cssSelector("#box-campaigns .regular-price"));
         WebElement promoprice = driver.findElement(By.cssSelector("#box-campaigns .campaign-price"));
-        WebElement InnerHedaer = driver.findElement(By.cssSelector("h1.title"));
-        WebElement totalPrice = driver.findElement(By.cssSelector(".regular-price"));
-        WebElement promoPriceInner = driver.findElement(By.cssSelector(".campaign-price"));
 
-        String prPrice = promoPriceInner.getText();
+
+
         String productName = product.findElement(By.cssSelector(".name")).getText();
         String price = mainPrice.getText();
         String promoPrice = promoprice.getText();
@@ -30,20 +28,24 @@ public class Task10 extends BaseClass{
         String colorPromoPrice = promoprice.getCssValue("color");
         String fontHeightPromoPrice = promoprice.getCssValue("font-size");
         String fontHeightMainPrice = mainPrice.getCssValue("font-size");
-        String title = InnerHedaer.getText();
-        String allPrice = totalPrice.getText();
-        String sizeAllPrice = totalPrice.getCssValue("font-size");
-        String sizePromoPrice = promoPriceInner.getCssValue("font-size");
-        double allInnerHeight = Double.parseDouble(sizeAllPrice.substring(0, sizeAllPrice.length()-2));
-        double promoInnerHeight = Double.parseDouble(sizePromoPrice.substring(0,sizePromoPrice.length()-2));
 
         checkFontMainPrice(colorPrice, colorMainPrice, "line-through", "rgba(119, 119, 119, 1)");  // 10 в
         checkFontPromoPrice(fontPromoPrice, colorPromoPrice); // 10 г
         checkSizeFonts(fontHeightPromoPrice, fontHeightMainPrice);  // 10 В
         product.click();  // переход во внутрь страницы
+        WebElement InnerHedaer = driver.findElement(By.cssSelector("h1.title"));
+        WebElement totalPrice = driver.findElement(By.cssSelector(".regular-price"));
+        WebElement promoPriceInner = driver.findElement(By.cssSelector(".campaign-price"));
+        String title = InnerHedaer.getText();
+        String allPrice = totalPrice.getText();
+        String sizeAllPrice = totalPrice.getCssValue("font-size");
+        String sizePromoPrice = promoPriceInner.getCssValue("font-size");
         checkTitles(productName, title);  // 10 a
         checkMainPrice(price, allPrice);  // 10 б
+        String prPrice = promoPriceInner.getText();
         checkAllPromoPrice(prPrice, promoPrice); // 10 б
+        double allInnerHeight = Double.parseDouble(sizeAllPrice.substring(0, sizeAllPrice.length()-2));
+        double promoInnerHeight = Double.parseDouble(sizePromoPrice.substring(0,sizePromoPrice.length()-2));
         checkFontSizeMainPromo(allInnerHeight, promoInnerHeight); // 10 г
 
 
