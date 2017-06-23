@@ -22,6 +22,7 @@ public class BaseClass {
             return;
         }
 
+//        driver = new InternetExplorerDriver();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-fullscreen");
